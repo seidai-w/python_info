@@ -15,10 +15,14 @@
         <ul>
             <li><a href="../index.html">トップページ</a></li>
             <li>
-                <a href="#">セクション1</a>
+                <a href="#">環境構築</a>
                 <ul>
-                    <li><a href="./topic1.html">環境構築</a></li>
-                    <li><a href="./topic2.html"></a></li>
+                    <li><a href="#visinst">1.VScodeの環境構築</a></li>
+                    <ul>
+                        <dl><a href="#vsdown">1-1.VScodeのダウンロード</a></dl>
+                        <dl><a href="#vsinstall">1-2.VScodeのインストール</a></dl>
+                    </ul>
+                    <li><a href="">2.</a></li>
                 </ul>
             </li>
             <li><a href="../about.html">Aboutページ</a></li>
@@ -30,37 +34,653 @@
         <h1>環境構築</h1>
         <p>このページでは、VScodeを使用してPythonの環境構築を行う方法を記載します。</p>
         <ul class="container">
-            <li><a href="#vsinst">1. VScodeのインストール</a></li>
-            <li><a href="#details">2. Pythonのインストール</a>
+            <dl><a href="#vsinst">1. VScodeの環境構築</a></dl>
                 <ul>
-                    <li><a href="#subsection1">2.1. サブセクション1</a></li>
-                    <li><a href="#subsection2">2.2. サブセクション2</a></li>
+                    <dl><a href="#vsdown">1.1. VScodeのダウンロード</a></dl>
+                    <dl><a href="#vsinstall">1.2. VScodeのインストール</a></dl>
                 </ul>
-            </li>
-            <li><a href="#steps">3. 手順</a></li>
-            <li><a href="#references">4. 参考リンク</a></li>
-            <li><a href="#faq">5. よくある質問 (FAQ)</a></li>
-            <li><a href="#notes">6. 脚注</a></li>
+            <dl><a href="#details">2. Pythonの環境構築</a>
+                <ul>
+                    <dl><a href="#pydown">2.1.Pythonのダウンロード</a></dl>
+                    <dl><a href="#pyinst">2.2.Pythonのインストール</a></dl>
+                </ul>
+            </dl>
+            <dl><a href="#buil">3.VScodeへPython環境を構築</a></li>
         </ul>
 
-        <h2 id="vsinst">1.VScodeのインストール</h2>
-        <p>VSコードのインストールとPythonのインストールの順番は逆でも問題ありません</p>
-
-        <ul>
-            <li>VScodeのHPへアクセスし、最新版をダウンロードしてください<a href="https://code.visualstudio.com/download">リンク</a>(2024/09/16現在)</li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-
-        <h2>プログラムの構成要素</h2>
-        <p>プログラムは、命令の集まりであり、次のような構成要素で成り立っています。</p>
-        <ul>
-            <li>変数: データを保存するための箱。</li>
-            <li>条件分岐: 特定の条件に応じて異なる処理を行う。</li>
-            <li>ループ: 同じ処理を繰り返す。</li>
-            <li>関数: 特定の処理をまとめたブロック。</li>
-        </ul>
+        <h2 id="vsinst">1.VScodeの環境構築</h2>
+        <h3>VSコードのインストールとPythonのインストールの順番は逆でも問題ありません</h3>
+        <dd>
+            <h4 id="vsdown">1.VScodeのダウンロード</h4>
+                <p>VScodeのHPへアクセスし、最新版をダウンロードしてください<a href="https://code.visualstudio.com/download">リンク</a>(2024/09/16現在)</p>
+                    <input type="checkbox" class="popup-checkbox" id="pop-up1">
+                    <label for="pop-up1" class="overlay">
+                        <label class="popWindow">
+                            <div class="ptitle">
+                                <label class="close" for="pop-up1">&times;</label>
+                                <img itemprop="image" loading="lazy" src="../data/image/vs0.png" alt="サンプル画像"/>
+                            </div>
+                        </label>
+                    </label>
+                    <div class="c">
+                        <label for="pop-up1">
+                            <img itemprop="image" loading="lazy" src="../data/image/vs0.png" width="500" alt="サンプル画像" align="left" />
+                            <p>
+                                それぞれのOSやバージョンに合わせて選択し、インストールを行ってください。<br>
+                                画像をクリックすると拡大します。
+                            </p>
+                        </label>
+                    </div>
+                    <br clear="all">
+            <h4 id="vsinstall">2.VScodeのインストール</h4>
+                <dd>
+                    <input type="checkbox" class="popup-checkbox" id="pop-up2">
+                    <label for="pop-up2" class="overlay">
+                        <label class="popWindow">
+                            <div class="ptitle">
+                                <label class="close" for="pop-up2">&times;</label>
+                                <img itemprop="image" loading="lazy" src="../data/image/vs1.png" alt="サンプル画像"/>
+                            </div>
+                        </label>
+                    </label>
+                    <div class="c">
+                        <label for="pop-up2">
+                            <img itemprop="image" loading="lazy" src="../data/image/vs1.png" width="500" alt="サンプル画像" align="left" />
+                            <p>
+                                同意するを選択してください<br>
+                                画像をクリックすると拡大します。
+                            </p>
+                        </label>
+                    </div>
+                    <br clear="all">
+                </dd>
+                <dd>
+                    <input type="checkbox" class="popup-checkbox" id="pop-up3">
+                    <label for="pop-up3" class="overlay">
+                        <label class="popWindow">
+                            <div class="ptitle">
+                                <label class="close" for="pop-up3">&times;</label>
+                                <img itemprop="image" loading="lazy" src="../data/image/vs3.png" alt="サンプル画像"/>
+                            </div>
+                        </label>
+                    </label>
+                    <div class="c">
+                        <label for="pop-up3">
+                            <img itemprop="image" loading="lazy" src="../data/image/vs3.png" width="500" alt="サンプル画像" align="left" />
+                            <p>
+                                そのまま次へを押してください<br>
+                            </p>
+                        </label>
+                    </div>
+                    <br clear="all">
+                </dd>
+                <dd>
+                    <input type="checkbox" class="popup-checkbox" id="pop-up4">
+                    <label for="pop-up4" class="overlay">
+                        <label class="popWindow">
+                            <div class="ptitle">
+                                <label class="close" for="pop-up4">&times;</label>
+                                <img itemprop="image" loading="lazy" src="../data/image/vs4.png" alt="サンプル画像"/>
+                            </div>
+                        </label>
+                    </label>
+                    <div class="c">
+                        <label for="pop-up4">
+                            <img itemprop="image" loading="lazy" src="../data/image/vs4.png" width="500" alt="サンプル画像" align="left" />
+                            <p>
+                                それぞれの設定に合わせてチェックを入れてください。<br>
+                                サポートされている...を選択すると、txtなどのデフォルトのアプリケーションがVScodeで開くので注意してください<br>
+                                おすすめはすべてにチェックを入れてください。<br>
+                            </p>
+                        </label>
+                    </div>
+                    <br clear="all">
+                </dd>
+                <dd>
+                    <input type="checkbox" class="popup-checkbox" id="pop-up5">
+                    <label for="pop-up5" class="overlay">
+                        <label class="popWindow">
+                            <div class="ptitle">
+                                <label class="close" for="pop-up5">&times;</label>
+                                <img itemprop="image" loading="lazy" src="../data/image/vs5.png" alt="サンプル画像"/>
+                            </div>
+                        </label>
+                    </label>
+                    <div class="c">
+                        <label for="pop-up5">
+                            <img itemprop="image" loading="lazy" src="../data/image/vs5.png" width="500" alt="サンプル画像" align="left" />
+                            <p>
+                                内容がよければインストールを選択してください<br>
+                            </p>
+                        </label>
+                    </div>
+                    <br clear="all">
+                </dd>
+                <dd>
+                    <input type="checkbox" class="popup-checkbox" id="pop-up6">
+                    <label for="pop-up6" class="overlay">
+                        <label class="popWindow">
+                            <div class="ptitle">
+                                <label class="close" for="pop-up6">&times;</label>
+                                <img itemprop="image" loading="lazy" src="../data/image/vs6.png" alt="サンプル画像"/>
+                            </div>
+                        </label>
+                    </label>
+                    <div class="c">
+                        <label for="pop-up6">
+                            <img itemprop="image" loading="lazy" src="../data/image/vs6.png" width="500" alt="サンプル画像" align="left" />
+                            <p>
+                                インストール画面です<br>
+                            </p>
+                        </label>
+                    </div>
+                    <br clear="all">
+                </dd>
+                <dd>
+                    <input type="checkbox" class="popup-checkbox" id="pop-up7">
+                    <label for="pop-up7" class="overlay">
+                        <label class="popWindow">
+                            <div class="ptitle">
+                                <label class="close" for="pop-up7">&times;</label>
+                                <img itemprop="image" loading="lazy" src="../data/image/vs7.png" alt="サンプル画像"/>
+                            </div>
+                        </label>
+                    </label>
+                    <div class="c">
+                        <label for="pop-up7">
+                            <img itemprop="image" loading="lazy" src="../data/image/vs7.png" width="500" alt="サンプル画像" align="left" />
+                            <p>
+                                インストールが完了したら、起動させずに終了し、pythonのインストールヘ進んでください。<br>
+                            </p>
+                        </label>
+                    </div>
+                    <br clear="all">
+                </dd>
+                <dd>
+                    <br>
+                    以上でVSコードのインストールは完了です。
+                </dd>
+        </dd>
+        <!--pythonの環境構築-->
+        <h2>2.Pythonの環境構築</h2>
+        <dd>
+            <h4 id="pydown">1.Pythonのダウンロード</h4>
+            <p>PythonのHPへアクセスし、最新版をダウンロードしてください<a href="https://www.python.org/downloads/">リンク</a>(2024/09/16現在)</p>
+                <input type="checkbox" class="popup-checkbox" id="py1">
+                <label for="py1" class="overlay">
+                    <label class="popWindow">
+                        <div class="ptitle">
+                            <label class="close" for="py1">&times;</label>
+                            <img itemprop="image" loading="lazy" src="../data/image/py00.png" alt="サンプル画像"/>
+                        </div>
+                    </label>
+                </label>
+                <div class="c">
+                    <label for="py1">
+                        <img itemprop="image" loading="lazy" src="../data/image/py00.png" width="500" alt="サンプル画像" align="left" />
+                        <p>
+                            それぞれのOSやバージョンに合わせて選択し、インストールを行ってください。<br>
+                        </p>
+                    </label>
+                </div>
+                <br clear="all">
+            <h4 id="pydown">2.Pythonのインストール</h4>
+                <input type="checkbox" class="popup-checkbox" id="py2">
+                    <label for="py2" class="overlay">
+                        <label class="popWindow">
+                            <div class="ptitle">
+                                <label class="close" for="py2">&times;</label>
+                                <img itemprop="image" loading="lazy" src="../data/image/py01.png" alt="サンプル画像"/>
+                            </div>
+                        </label>
+                    </label>
+                    <div class="c">
+                        <label for="py2">
+                            <img itemprop="image" loading="lazy" src="../data/image/py01.png" width="500" alt="サンプル画像" align="left" />
+                            <p>
+                                赤枠のチェックは必ず入れてください<br>
+                                出ないと面倒くさい手順を踏むようになります。<br>
+                            </p>
+                        </label>
+                    </div>
+                    <br clear="all">
+                    <input type="checkbox" class="popup-checkbox" id="py3">
+                    <label for="py3" class="overlay">
+                        <label class="popWindow">
+                            <div class="ptitle">
+                                <label class="close" for="py3">&times;</label>
+                                <img itemprop="image" loading="lazy" src="../data/image/py02.png" alt="サンプル画像"/>
+                            </div>
+                        </label>
+                    </label>
+                    <div class="c">
+                        <label for="py3">
+                            <img itemprop="image" loading="lazy" src="../data/image/py02.png" width="500" alt="サンプル画像" align="left" />
+                            <p>
+                                install nowを選択し、インストールしてください。
+                            </p>
+                        </label>
+                    </div>
+                    <br clear="all">
+                    <input type="checkbox" class="popup-checkbox" id="py4">
+                    <label for="py4" class="overlay">
+                        <label class="popWindow">
+                            <div class="ptitle">
+                                <label class="close" for="py4">&times;</label>
+                                <img itemprop="image" loading="lazy" src="../data/image/py06.png" alt="サンプル画像"/>
+                            </div>
+                        </label>
+                    </label>
+                    <div class="c">
+                        <label for="py4">
+                            <img itemprop="image" loading="lazy" src="../data/image/py06.png" width="500" alt="サンプル画像" align="left" />
+                            <p>
+                                Disable path length limitと出ていた場合、そこをクリックしてください。<br>
+                                従来よりWindowsではファイルパスは最大260文字に制限されていましたが、Windows10からこの制限を解除るため、クリックをしてください。<br>
+                            </p>
+                        </label>
+                    </div>
+                    <br clear="all">
+                    <input type="checkbox" class="popup-checkbox" id="py5">
+                    <label for="py5" class="overlay">
+                        <label class="popWindow">
+                            <div class="ptitle">
+                                <label class="close" for="py5">&times;</label>
+                                <img itemprop="image" loading="lazy" src="../data/image/py04.png" alt="サンプル画像"/>
+                            </div>
+                        </label>
+                    </label>
+                    <div class="c">
+                        <label for="py5">
+                            <img itemprop="image" loading="lazy" src="../data/image/py04.png" width="500" alt="サンプル画像" align="left" />
+                            <p>
+                                この画面が出たらインストールが完了しました。<br>
+                            </p>
+                        </label>
+                    </div>
+                    <br clear="all">
+                    <input type="checkbox" class="popup-checkbox" id="py6">
+                    <label for="py6" class="overlay">
+                        <label class="popWindow">
+                            <div class="ptitle">
+                                <label class="close" for="py6">&times;</label>
+                                <img itemprop="image" loading="lazy" src="../data/image/py05.png" alt="サンプル画像"/>
+                            </div>
+                        </label>
+                    </label>
+                    <div class="c">
+                        <label for="py6">
+                            <img itemprop="image" loading="lazy" src="../data/image/py05.png" width="500" alt="サンプル画像" align="left" />
+                            <p>
+                                コマンドプロンプトを開き、python --versionと入力してください。<br>
+                                実行結果がPython 3.12.XXとなっていればPythonのインストールが完了です。<br>
+                            </p>
+                        </label>
+                    </div>
+                    <br clear="all">
+        </dd>
+        <!---ここからvscodeでpythonを実行させるためのもの-->
+        <h2>3.VScodeでのPython環境を構築</h2>
+        <dd>
+            <input type="checkbox" class="popup-checkbox" id="bi1">
+            <label for="bi1" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi1">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs8.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi1">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs8.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        このページは、Mark Doneを押すとけすことができます。
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi2">
+            <label for="bi2" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi2">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs9.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi2">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs9.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        VScodeを起動すると、デフォルトの言語が英語のため、必須ではないですが、日本語に変更することをお勧めします。<br>
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi3">
+            <label for="bi3" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi3">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs10.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi3">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs10.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        VScodeを起動すると、デフォルトの言語が英語のため、必須ではないですが、日本語に変更することをお勧めします。<br>
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi4">
+            <label for="bi4" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi4">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs11.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi4">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs11.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        このページの赤枠の部分がUninstallとなっていたらインストールが正常に完了しています。<br>
+                        右下のChange Language And Resetを選択すると、次の画面が表示されます<br>
+                        もし、表示されない場合、上部の検索欄に「>change display language」と入力してください。<br>
+                        日本語を選択し、VScodeの再起動を行うと日本語に変換されます
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi5">
+            <label for="bi5" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi5">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs12.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi5">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs12.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        この画面が開くと日本語化に成功です。<br>
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi6">
+            <label for="bi6" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi6">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs13.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi6">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs13.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        次に、Pythonの拡張機能をインストールします。<br>
+                        先ほどと同様にPythonと入力し、Pythonの拡張機能をインストールします。<br>
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi7">
+            <label for="bi7" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi7">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs14.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi7">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs14.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                       拡張機能のインストールに成功したら、このような案内画面が表示されます。<br>
+                       上から順番に追って構築していきます。
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi8">
+            <label for="bi8" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi8">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs16.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi8">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs16.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        初めにPythonのコードを保存するためのフォルダを作成します。<br>
+                        作成するプログラムは、一つのフォルダで管理することがおすすめです。
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi9">
+            <label for="bi9" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi9">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs17.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi9">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs17.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        この画面が表示された場合、フォルダを信じて続行を選択します。<br>
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi10">
+            <label for="bi10" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi10">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs18.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi10">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs18.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        この画面が表示された場合、はい、製作者を信頼しますを選択します。<br>
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi11">
+            <label for="bi11" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi11">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs19.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi11">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs19.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        VScodeを起動すると、デフォルトの言語が英語のため、必須ではないですが、日本語に変更することをお勧めします。<br>
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi12">
+            <label for="bi12" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi12">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs20.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi12">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs20.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        フォルダとファイルを作成してください。<br>
+                        ファイルの拡張子は.pyとしてください<br>
+                        pytestを使用することを考慮する場合は、src/**.pyとしてください<br>
+                        これでpythonファイルを作成という項目は完了です。
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi13">
+            <label for="bi13" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi13">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs21.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi13">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs21.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        これから仮想環境を構築します。<br>
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi14">
+            <label for="bi14" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi14">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs22.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi14">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs22.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        ターミナル:新しいターミナルを選択します。<br>
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi15">
+            <label for="bi15" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi15">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs23.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi15">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs23.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        ターミナルへ「python -m venv .venv」と入力してください。<br>
+                        コマンドが正常に完了した場合、新しく.venvというフォルダが作成されます。<br>
+                        ワークスペースフォルダとして設定しますかと出た場合、はいを押すことによって、ファイルを開くのではなく、フォルダとして開いたり、<br>
+                        設定をフォルダのみに適応したりすることができます。
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi16">
+            <label for="bi16" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi16">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs25.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi16">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs25.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        このフォルダで使用する仮想環境を選択するために設定を行います。<br>
+                        仮想環境とは、構築するフォルダにひとつづつ合わせて作成します。<br>
+                        作成するソフトに合わせてライブラリなどを使用するためです。<br>
+                        上部の検索欄に、「>Python: select interpreter」と入力し、先ほど作成した仮想環境を選択してください。
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi17">
+            <label for="bi17" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi17">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs26.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi17">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs26.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        先ほど作成した仮想環境は、相対パスで表示されています。<br>
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi18">
+            <label for="bi18" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi18">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs27.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi18">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs27.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        右下へ、('.venv:venv')と表示されていれば環境構築が完了です。<br>
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+            <input type="checkbox" class="popup-checkbox" id="bi19">
+            <label for="bi19" class="overlay">
+                <label class="popWindow">
+                    <div class="ptitle">
+                        <label class="close" for="bi19">&times;</label>
+                        <img itemprop="image" loading="lazy" src="../data/image/vs29.png" alt="サンプル画像"/>
+                    </div>
+                </label>
+            </label>
+            <div class="c">
+                <label for="bi19">
+                    <img itemprop="image" loading="lazy" src="../data/image/vs29.png" width="500" alt="サンプル画像" align="left" />
+                    <p>
+                        コードを記載し、右上の▷をクリックすることで、ターミナル内に実行結果が表示されます。<br>
+                        これで環境構築は終了です。
+                    </p>
+                </label>
+            </div>
+            <br clear="all">
+        </dd>
 
         <div class="footer">
             <p>© 2024 seidai-w.All rights reserved.</p>
