@@ -192,3 +192,42 @@ body {
     opacity: 0;
   }
 }
+.code-container {
+  position: relative;
+  background-color: #333; /* 背景色を黒に */
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin: 20px 0;
+  border-radius: 5px;
+  font-family: monospace;
+ 
+  color: #fff; /* 文字色を白に */
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #06D85F;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  background-color: #04a64b;
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap; /* 長い行を折り返す */
+  overflow-x: auto; /* 横スクロールを有効にする */
+  white-space: pre; /* インデントや空白をそのまま表示 */
+  word-wrap: break-word;
+  background-color: #333; /* コード部分の背景色を黒に */
+  color: #fff; /* コード部分の文字色を白に */
+  padding: 10px;
+  border-radius: 5px;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>トピック3: コードレシピ集</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <script src="../assets/js/main.js"></script>
+    <!-- サイドバー -->
+    <nav class="sidebar">
+        <h2>ナビゲーション</h2>
+        <ul>
+            <li><a href="../index.html">トップページ</a></li>
+            <li><a href="./topic1.html">環境構築</a></li>
+            <li><a href="./topic2.html">Vscodeのライブラリ</a></li>
+            <li><a href="./topic3.html">コードレシピ集</a></li>
+            <ul>
+                <li><a href="#py">Python</a></li>
+                <li><a href="#cp">C++</a></li>
+                <li><a href="#cs">C#</a></li>
+            </ul>
+            <li><a href="../about.html">Aboutページ</a></li>
+        </ul>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <div class="main-content">
+        <h1>トピック3: コードレシピ集</h1>
+        <p>このページでは、コードのレシピ集を作成しました。</p>
+        <ul class="container">
+            <dl><a href="#py">1.Python</a></dl>
+            <dl><a href="#cp">2.C++</a></li>
+            <dl><a href="#cs">3.C#</a></li>
+        </ul>
+        <!--Python-->
+        <h2 id="py">1.Python</h2>
+        <ul>
+            <dl>
+                <div class="code-container">
+                    <pre>
+        <code id="code2" class="code-block"></code></pre>            
+                    <button class="copy-btn" onclick="copyCode('code2')">コピー</button>
+                </div>
+            </dl>
+        </ul>
+
+        
+        
+        <h2 id="cp">2.C++</h2>
+        <p>C++で使用するコードのレシピをまとめます。</p>
+        <ul>
+            <dl>C:\以下のファイルを再帰的にvectorに入れるコード<br>ただし、C++17以降が必要</dl>
+            <dl>
+                <div class="code-container">
+                    <pre><code id="cp_1" class="code-block">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;filesystem&gt;
+#include &lt;string&gt;
+
+namespace fs = std::filesystem;
+
+int main() {
+    std::wstring folderPath = L"C:\\";
+
+    std::vector&lt;std::wstring&gt; fileList;
+
+    try {
+        for (const auto& entry : fs::recursive_directory_iterator(folderPath, fs::directory_options::skip_permission_denied)) {
+            try {
+                if (fs::is_regular_file(entry.status())) {
+                    fileList.push_back(entry.path().wstring()); // wstringに変換
+                }
+            }
+            catch (const std::exception& e) {
+                std::wcerr << L"Error processing file: " << entry.path().wstring() << L"\n"
+                    << L"Error: " << e.what() << L"\n";
+            }
+        }
+    }
+    catch (const std::exception& e) {
+        std::wcerr << L"Error accessing directory: " << folderPath << L"\n"
+            << L"Error: " << e.what() << L"\n";
+    }
+
+    std::wcout << L"Files found:\n";
+    for (const auto& file : fileList) {
+        std::wcout << file << L"\n";
+    }
+    std::cout << fileList.size() << std::endl;
+
+    return 0;
+}</code></pre>            
+                    <button class="copy-btn" onclick="copyCode('cp_1')">コピー</button>
+                </div>
+            </dl>
+        </ul>
+        <h2 id="cs">3.C#</h2>
+        <p></p>
+        <ul>
+
+        </ul>
+
+        <div class="footer">
+            <p>© 2024 seidai-w.All rights reserved.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
