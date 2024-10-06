@@ -9,6 +9,7 @@
 <body>
 <!--環境構築のページ-->
 <div class="wrapper">
+    <script src="../assets/js/main.js"></script>
     <!-- サイドバー -->
     <nav class="sidebar">
         <h2>wiki</h2>
@@ -27,7 +28,7 @@
         <h1>Pyenv+Poetryで開発環境構築</h1>
         <p>このページでは、Pyenvとpoetryを使用し、Pythonのバージョンやライブラリの管理を行うことができるようにします。</p>
         <ul class="container">
-            <dl><a href="#vsinst">1. VScodeの環境構築</a></dl>
+            <dl><a href="#vsinst">1.Pyenvのインストール</a></dl>
                 <ul>
                     <dl><a href="#vsdown">1.1. VScodeのダウンロード</a></dl>
                     <dl><a href="#vsinstall">1.2. VScodeのインストール</a></dl>
@@ -41,52 +42,151 @@
             <dl><a href="#buil">3.VScodeへPython環境を構築</a></li>
         </ul>
 
-        <h2 id="vsinst">1.Pyenv</h2>
-        <h3>Pythonのバージョン管理を行うために、Pyenv</h3>
+        <h2 id="vsinst">1.Pyenvのインストール</h2>
+        <h3>Pythonのバージョン管理を行うためのツールでPyenvを使用します</h3>
         <dd>
-            <h4 id="vsdown">1.VScodeのダウンロード</h4>
-                <p>VScodeのHPへアクセスし、最新版をダウンロードしてください<a href="https://code.visualstudio.com/download">リンク</a>(2024/09/16現在)</p>
-                    <input type="checkbox" class="popup-checkbox" id="pop-up1">
-                    <label for="pop-up1" class="overlay">
-                        <label class="popWindow">
-                            <div class="ptitle">
-                                <label class="close" for="pop-up1">&times;</label>
-                                <img itemprop="image" loading="lazy" src="../data/image/vs0.png" alt="サンプル画像"/>
-                            </div>
-                        </label>
-                    </label>
-                    <div class="c">
-                        <label for="pop-up1">
-                            <img itemprop="image" loading="lazy" src="../data/image/vs0.png" width="500" alt="サンプル画像" align="left" />
-                            <p>
-                                それぞれのOSやバージョンに合わせて選択し、インストールを行ってください。<br>
-                                画像をクリックすると拡大します。
-                            </p>
-                        </label>
+            <h4 id="vsdown">1.Pyenvのインストール</h4>
+                <p>下記のコマンドをコピーし、PowerShellで実行をしてください。</p>
+                <ul>
+                    <dl>
+                        <div class="code-container">
+                            <pre>
+<code id="pe1" class="code-block">Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"</code></pre>            
+                            <button class="copy-btn" onclick="copyCode('pe1')">コピー</button>
+                        </div>
+                    </dl>
+                </ul>
+                <p> インストール完了後、PowerShellを再起動してください。<br>
+                    インストールが完了しているかを確かめるため、次のコマンドを入力してください。
+                </p>
+                <ul>
+                    <dl>
+                        <div class="code-container">
+                            <pre>
+<code id="pe2" class="code-block">pyenv --Version</code></pre>            
+                            <button class="copy-btn" onclick="copyCode('pe2')">コピー</button>
+                        </div>
+                    </dl>
+                </ul>
+                <p>pyenv X.X.X(Xには数字)が出力されるとインストールが完了しています。<br>
+                   表示されない場合は、pyenvのパスが通っていない場合があります。</p>
+            
+            <h4 id="vsinstall">2.Pythonのバージョンを指定</h4>
+            <p>Pythonの使用できるバージョンの表示を行うために以下のコマンドを入力してください。<br>
+               表示されたものがpythonで使用できるバージョンとなります。
+            </p>
+            <ul>
+                <dl>
+                    <div class="code-container">
+                        <pre>
+<code id="pe3">pyenv install --list</code></pre>
+                        <button class="copy-btn" onclick="copyCode('pe3')">コピー</button>
                     </div>
-                    <br clear="all">
-            <h4 id="vsinstall">2.VScodeのインストール</h4>
-                <dd>
-                    <input type="checkbox" class="popup-checkbox" id="pop-up2">
-                    <label for="pop-up2" class="overlay">
-                        <label class="popWindow">
-                            <div class="ptitle">
-                                <label class="close" for="pop-up2">&times;</label>
-                                <img itemprop="image" loading="lazy" src="../data/image/vs1.png" alt="サンプル画像"/>
-                            </div>
-                        </label>
-                    </label>
-                    <div class="c">
-                        <label for="pop-up2">
-                            <img itemprop="image" loading="lazy" src="../data/image/vs1.png" width="500" alt="サンプル画像" align="left" />
-                            <p>
-                                同意するを選択してください<br>
-                                画像をクリックすると拡大します。
-                            </p>
-                        </label>
+                </dl>
+            </ul>
+
+            <h4 id="vsinstall">3.Pythonのインストール</h4>
+            <p>先ほどのコマンドで出力された使用可能なバージョンを指定してインストールをしてください。</p>
+            <ul>
+                <dl>
+                    <div class="code-container">
+                        <pre>
+<code id="pe4">pyenv install X.X.X(Xは数字)</code></pre>
+                        <button class="copy-btn" onclick="copyCode('pe4')">コピー</button>
                     </div>
-                    <br clear="all">
-                </dd>
+                </dl>
+            </ul>
+            <p>ほかのバージョンもインストールすることができます。</p>
+
+            <h4 id="vsinstall">4.Pythonのアクティブ化</h4>
+            <p>先ほどインストールを行ったPythonを使用できるようにします。<br>
+               方法が2つあり、どのディレクトリでも使用できるようなバージョンの設定はglobal<br>
+               特定のディレクトリ内で使用できるようにする設定はlocalとなります。
+            </p>
+            <ul>
+                <dl>
+                    <div class="code-container">
+                        <pre>
+<code id="pe5" class="code-block">pyenv global X.X.X</code></pre>
+                        <button class="copy-btn" onclick="copyCode('pe5')">コピー</button>
+                    </div>
+                </dl>
+            </ul>
+            <p>特定のディレクトリ内に入り、次のコマンドを打つことで、ディレクトリ内のバージョンを設定できます。</p>
+            <ul>
+                <dl>
+                    <div class="code-container">
+                        <pre>
+<code id="pe5" class="code-block">pyenv local X.X.X</code></pre>
+                        <button class="copy-btn" onclick="copyCode('pe5')">コピー</button>
+                    </div>
+                </dl>
+            </ul>
+            <p>以上でPyenvのインストールおよび環境構築は完了です。</p>
+
+            <h2 id="vsinst">2.Poetryのインストール</h2>
+            <h3>Pythonのパッケージなどを同一環境としてそろえるために</h3>
+            <dd>
+                <h4 id="vsdown">1.Pyenvのインストール</h4>
+                    <p>下記のコマンドをコピーし、PowerShellで実行をしてください。</p>
+                    <ul>
+                        <dl>
+                            <div class="code-container">
+                                <pre>
+<code id="po1" class="code-block">(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -</code></pre>            
+                                <button class="copy-btn" onclick="copyCode('po1')">コピー</button>
+                            </div>
+                        </dl>
+                    </ul>
+                    <p>poetryのパスを通すために下記のコマンドを入力してください。</p>
+                    <ul>
+                        <dl>
+                            <div class="code-container">
+                                <pre>
+<code id="po2" class="code-block">[System.Environment]::SetEnvironmentVariable("Path", $env:Path + ";" + $env:APPDATA + "\Python\Scripts", "User")</code></pre>
+                                <button class="copy-btn" onclick="copyCode('po2')">コピー</button>
+                            </div>
+                        </dl>
+                    </ul>
+                    <p>powershellを再起動させ、パスの確認のために、下記のコマンドを入力してください。</p>
+                    <ul>
+                        <dl>
+                            <div class="code-container">
+                                <pre>
+<code id="po3" class="code-block">poetry -V</code></pre>
+                                <button class="copy-btn" onclick="copyCode('po3')">コピー</button>
+                            </div>
+                        </dl>
+                    </ul>
+                    <p>パスが通っていれば、Poetry (version 1.8.3)のように出力されます。</p>
+                    <p>プロジェクト内に.venvを作成させるために以下のコマンドを入力してください。</p>
+                    <ul>
+                        <dl>
+                            <div class="code-container">
+                                <pre>
+<code id="po4" class="code-block">poetry config virtualenvs.in-project true</code></pre>
+                                <button class="copy-btn" onclick="copyCode('po4')">コピー</button>
+                            </div>
+                        </dl>
+                    </ul>
+
+                <h4 id="vsdown">4.Pythonのプロジェクトフォルダを作成する</h4>
+                    <p>下記のコマンドをコピーし、PowerShellで実行をしてください。</p>
+                    <ul>
+                        <dl>
+                            <div class="code-container">
+                                <pre>
+<code id="po1" class="code-block">poetry new プロジェクト名</code></pre>            
+                                <button class="copy-btn" onclick="copyCode('po1')">コピー</button>
+                            </div>
+                        </dl>
+                    </ul>
+                    <p>正常終了すると新しくフォルダが作成されます。</p>
+
+
+
+
+
                 <dd>
                     <input type="checkbox" class="popup-checkbox" id="pop-up3">
                     <label for="pop-up3" class="overlay">
