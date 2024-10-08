@@ -103,7 +103,121 @@ int main() {
         <h2 id="cs">3.C#</h2>
         <p></p>
         <ul>
-
+            <ul>
+                <dl>
+                    <div class="code-container">
+                        <pre>
+<code id="cs1" class="code-block"></code>            using System;
+            using System.Diagnostics;
+            using System.Windows.Automation;
+            
+            namespace UIAutomationExample
+            {
+                class Program
+                {
+                    static void Main(string[] args)
+                    {
+                        // メモ帳を例として起動
+                        Process notepad = Process.Start("notepad.exe");
+            
+                        // メモ帳のウィンドウが見つかるまで待つ
+                        AutomationElement mainWindow = WaitForElementByName("無題 - メモ帳", ControlType.Window);
+            
+                        // ボタンをクリックする例 (ここではメモ帳のダイアログを閉じる仮想例)
+                        //AutomationElement closeButton = FindElementByName(mainWindow, "Close", ControlType.Button);
+                        //ClickButton(closeButton);
+            
+                        // タブを選択する例（タブの名前 "View" を選択）
+                        // AutomationElement tabElement = FindElementByName(mainWindow, "View", ControlType.TabItem);
+                        // SelectTab(tabElement);
+            
+                        // リスト項目を選択する例（リストの項目 "Item 1" を選択）
+                        // AutomationElement listElement = FindElementByName(mainWindow, "Item 1", ControlType.ListItem);
+                        // SelectListItem(listElement);
+                        OutputElements(mainWindow, 0);
+                        // メモ帳を終了
+                        notepad.CloseMainWindow();
+                    }
+                    static void OutputElements(AutomationElement element, int level)
+                    {
+                        // インデントを作成
+                        string indent = new string(' ', level * 2);
+                        string name = element.Current.Name;
+                        string controlType = element.Current.ControlType.ProgrammaticName;
+            
+                        // 要素を出力
+                        Console.WriteLine($"{indent}名前: {name}, コントロールタイプ: {controlType}");
+            
+                        // 子要素を取得して再帰呼び出し
+                        var children = element.FindAll(TreeScope.Children, Condition.TrueCondition);
+                        foreach (AutomationElement child in children)
+                        {
+                            OutputElements(child, level + 1);
+                        }
+                    }
+            
+                    // 要素を名前で待機して取得
+                    static AutomationElement WaitForElementByName(string name, ControlType controlType)
+                    {
+                        AutomationElement element = null;
+                        while (element == null)
+                        {
+                            element = AutomationElement.RootElement.FindFirst(TreeScope.Children,
+                                new AndCondition(
+                                    new PropertyCondition(AutomationElement.NameProperty, name),
+                                    new PropertyCondition(AutomationElement.ControlTypeProperty, controlType)
+                                ));
+                        }
+                        return element;
+                    }
+            
+                    // 名前で要素を取得
+                    static AutomationElement FindElementByName(AutomationElement parent, string name, ControlType controlType)
+                    {
+                        return parent.FindFirst(TreeScope.Descendants,
+                            new AndCondition(
+                                new PropertyCondition(AutomationElement.NameProperty, name),
+                                new PropertyCondition(AutomationElement.ControlTypeProperty, controlType)
+                            ));
+                    }
+            
+                    // ボタンをクリックする関数
+                    static void ClickButton(AutomationElement buttonElement)
+                    {
+                        if (buttonElement != null)
+                        {
+                            InvokePattern invokePattern = buttonElement.GetCurrentPattern(InvokePattern.Pattern) as InvokePattern;
+                            invokePattern.Invoke();
+                        }
+                    }
+            
+                    // タブを選択する関数
+                    static void SelectTab(AutomationElement tabElement)
+                    {
+                        if (tabElement != null)
+                        {
+                            SelectionItemPattern selectionItemPattern = tabElement.GetCurrentPattern(SelectionItemPattern.Pattern) as SelectionItemPattern;
+                            selectionItemPattern.Select();
+                        }
+                    }
+            
+                    // リスト項目を選択する関数
+                    static void SelectListItem(AutomationElement listItemElement)
+                    {
+                        if (listItemElement != null)
+                        {
+                            SelectionItemPattern selectionItemPattern = listItemElement.GetCurrentPattern(SelectionItemPattern.Pattern) as SelectionItemPattern;
+                            selectionItemPattern.Select();
+                        }
+                    }
+                }
+            }
+            </pre>            
+                        <button class="copy-btn" onclick="copyCode('cs1')">コピー</button>
+                    </div>
+                </dl>
+            </ul>
+            
         </ul>
 
         <h2 id="ht">4.html</h2>
